@@ -1,4 +1,5 @@
 import React from "react";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -42,6 +43,17 @@ class HornedBeast extends React.Component {
                 </Card>
             </div>
         )
+
+
+class HornedBeast extends React.Component {
+    render() {
+        return (
+            <>
+     <h2>{this.props.title}</h2>, <img src={this.props.img} alt="" />, <p>{this.props.description}</p>
+        
+    </>
+)
+
     }
 }
 export default HornedBeast;
