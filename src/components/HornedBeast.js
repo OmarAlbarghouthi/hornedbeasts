@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import BeastModel from "./Modal";
 
 class HornedBeast extends React.Component {
 
@@ -9,7 +10,8 @@ class HornedBeast extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            numOfPets: 0
+            numOfPets: 0,
+            showModel: false
 
         }
     }
@@ -22,20 +24,24 @@ class HornedBeast extends React.Component {
 
     }
 
+   showMoldelfunction= () => {
+        this.props.beastButton(this.props.title)
+
+    }
 
     render() {
         return (
             <div>
 
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img  variant="top" src={this.props.image_url} alt="" />
+                    <Card.Img variant="top" src={this.props.image_url} alt="" />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>
-                         {this.state.description}
-                         Number of pets {this.state.numOfPets}
+                            Number of pets {this.state.numOfPets}
                         </Card.Text>
                         <Button onClick={this.increaseNumberOfPets} variant="primary">Vote</Button>
+                        <Button onClick={this.showMoldelfunction} variant="primary"> Show </Button>
                     </Card.Body>
                 </Card>
             </div>
