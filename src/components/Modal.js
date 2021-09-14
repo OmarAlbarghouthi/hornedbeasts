@@ -1,6 +1,6 @@
 import React from "react";
 import {Button,Modal} from 'react-bootstrap/';
-import dataArray from './Data.json'
+import data from './Data.json';
 
 
 class BeastModel extends React.Component{

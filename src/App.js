@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from './components/Footer';
 import HornedBeast from "./components/HornedBeast";
 import Main from "./components/Main";
-import Data from './components/Data.json';
+import data from './components/Data.json';
 import BeastModel from './components/Modal';
 
 class App extends React.Component {
@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Data: this.props.Data,
+      Data: this.props.data,
       animal: {},
       showModel: false,
 
@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   beastButton = (title) => {
-    let selcted = Data.find(animal => {
+    let selcted = data.find(animal => {
 
       if (animal.title === title) {
         return animal;
@@ -46,7 +46,7 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <Main beastButton={this.beastButton} Data={Data} />
+        <Main beastButton={this.beastButton} Data={data} />
         <BeastModel
           show={this.state.showModel}
           handleClose={this.handleClose}
