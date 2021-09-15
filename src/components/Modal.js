@@ -8,7 +8,6 @@ class BeastModel extends React.Component{
   render(){
     
     
-    
     let imgUrl =<img src={this.props.animal.image_url} alt="" width ={475}/> 
 
 
@@ -16,7 +15,7 @@ class BeastModel extends React.Component{
         <>
       <Modal show={this.props.show} onHide={this.props.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>name:{this.props.animal.title}</Modal.Title>
+          <Modal.Title>Name: {this.props.animal.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body> {imgUrl}{this.props.animal.description}</Modal.Body>
         <Modal.Footer>
@@ -31,4 +30,4 @@ class BeastModel extends React.Component{
 
 }
 }
-export default Modal;
+export default BeastModel;

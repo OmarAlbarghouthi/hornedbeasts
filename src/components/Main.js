@@ -5,6 +5,7 @@ import data from "./Data.json";
 
 class Main extends React.Component{
     render(){
+        console.log(this.props);
         return(
             <>
             {
@@ -19,7 +20,7 @@ class Main extends React.Component{
                         horns = {element.horns}
                         key = {index}
 
-                        
+                        beastButton = {this.props.beastButton}
                         />
                     )
                 })
