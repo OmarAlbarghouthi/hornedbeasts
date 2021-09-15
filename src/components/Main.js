@@ -1,6 +1,7 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
 import data from "./Data.json";
+// import Forms from "./Forms";
 
 
 class Main extends React.Component{

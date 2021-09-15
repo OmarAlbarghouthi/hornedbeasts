@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import BeastModel from "./Modal";
+import Forms from "./Forms";
 
 class HornedBeast extends React.Component {
 
@@ -39,6 +40,8 @@ class HornedBeast extends React.Component {
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>
                             Number of pets {this.state.numOfPets}
+                            <br/>
+                            Horns Number = {this.props.horns}
                         </Card.Text>
                         <Button onClick={this.increaseNumberOfPets} variant="primary">Vote</Button>
                         <Button onClick={this.showMoldelfunction} variant="primary"> Show </Button>
