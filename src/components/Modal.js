@@ -1,9 +1,21 @@
 import React from "react";
 import {Button,Modal} from 'react-bootstrap/';
 import data from './Data.json';
+import Form from "react-bootstrap/Form";
 
 
 class BeastModel extends React.Component{
+
+
+
+
+  constructor (props){
+    super(props)
+    this.state={
+      showModel : false,
+      horns : 0
+    }
+  }
 
   render(){
     

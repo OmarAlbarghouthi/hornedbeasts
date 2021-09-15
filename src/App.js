@@ -5,6 +5,7 @@ import HornedBeast from "./components/HornedBeast";
 import Main from "./components/Main";
 import data from './components/Data.json';
 import BeastModel from './components/Modal';
+import Forms from "./components/Forms";
 
 class App extends React.Component {
 
@@ -14,6 +15,7 @@ class App extends React.Component {
       Data: this.props.data,
       animal: {},
       showModel: false,
+      selcted: data
 
 
     }
@@ -22,7 +24,9 @@ class App extends React.Component {
   }
 
   handleClose = () => {
-    this.setState({ showModel: false })
+    this.setState({
+      showModel: false
+    })
   }
 
   beastButton = (title) => {
@@ -41,18 +45,37 @@ class App extends React.Component {
     })
   }
 
+  submitHndlr =  (event) => {
+    event.preventDefault();
+    this.setState({
+      horns: event.target.option.value
+    });
+
+    let filterAraay = data.filter(element => {
+
+      if (element.horns === Number(event.target.option.value)) {
+        return element;
+      }
+    })
+
+    this.setState({
+      selcted: filterAraay
+    })
+  }
+
 
   render() {
     return (
       <>
         <Header />
-        <Main beastButton={this.beastButton} Data={data} />
+        <Main beastButton={this.beastButton} Data={data} filterAraay={this.state.selcted} />
         <BeastModel
           show={this.state.showModel}
           handleClose={this.handleClose}
           animal={this.state.animal}
           beastButton={this.beastButton}
         />
+        <Forms submitHndlr={this.submitHndlr} />
         <Footer />
       </>
 
