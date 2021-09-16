@@ -48,12 +48,12 @@ class App extends React.Component {
   submitHndlr =  (event) => {
     event.preventDefault();
     this.setState({
-      horns: event.target.option.value
+      horns: event.target.value
     });
 
     let filterAraay = data.filter(element => {
 
-      if (element.horns === Number(event.target.option.value)) {
+      if (element.horns === Number(event.target.value)) {
         return element;
       }
     })
@@ -68,6 +68,7 @@ class App extends React.Component {
     return (
       <>
         <Header />
+        <Forms submitHndlr={this.submitHndlr} />
         <Main beastButton={this.beastButton} Data={data} filterAraay={this.state.selcted} />
         <BeastModel
           show={this.state.showModel}
@@ -75,7 +76,7 @@ class App extends React.Component {
           animal={this.state.animal}
           beastButton={this.beastButton}
         />
-        <Forms submitHndlr={this.submitHndlr} />
+        
         <Footer />
       </>
 
