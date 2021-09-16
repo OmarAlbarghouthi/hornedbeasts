@@ -10,7 +10,7 @@ class Main extends React.Component{
         return(
             <>
             {
-                data.map((element, index) =>{
+                this.props.filterAraay.map((element, index) =>{
                     return(
                         <HornedBeast
 

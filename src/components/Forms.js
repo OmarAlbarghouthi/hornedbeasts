@@ -13,7 +13,7 @@ class Forms extends React.Component {
 
       <>
 
-        <Form onSubmit={this.props.submitHndlr}>
+        <Form onChange ={this.props.submitHndlr}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label> How many horns? </Form.Label>
 
@@ -28,9 +28,7 @@ class Forms extends React.Component {
 
           </Form.Select>
 
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
+          
         </Form>
 
       </>
